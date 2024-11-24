@@ -19,7 +19,7 @@ namespace DeviceChangeFix
         private IPluginLog pluginLog { get; init; }
 
         // function that is called from WndProc when a device change happens
-        [Signature("B8 01 00 00 00 F0 0F C1 81 C8 4E 00 00 C3", DetourName = nameof(DeviceChangeDetour))]
+        [Signature("E8 ?? ?? ?? ?? 33 C0 E9 ?? ?? ?? ?? 41 8B C6", DetourName = nameof(DeviceChangeDetour))]
         private readonly Hook<DeviceChangeDelegate> deviceChangeDelegateHook = null!;
 
         public Plugin(IPluginLog pluginLog, IGameInteropProvider gameInteropProvider)
